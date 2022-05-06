@@ -1,6 +1,6 @@
 # MPINGARCH-R-Code
 
-* R Code for generating and fitting MPINGARCH models. 
+* R Codes for generating and fitting MPINGARCH models. 
 
 * Original research paper published in Journal of Time Series Analysis.
 
