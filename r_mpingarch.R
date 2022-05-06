@@ -179,8 +179,3 @@ r.nbingarch <- function(size, order, par){
   )
   
 }
-
-
-
-
-
