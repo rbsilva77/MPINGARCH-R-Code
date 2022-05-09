@@ -4,9 +4,9 @@
 
 # Instructions:
 
-# Set the theoretical parameter values
-
-# Set the sample size
+# size: sample size
+# order: model order
+# par: vector of theoretical parameter values 
 
 r.pigingarch <- function(size, order, par){
   
