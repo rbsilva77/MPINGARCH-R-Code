@@ -4,7 +4,7 @@
 
 # Arguments of the fit.mpingarh function:
 
-# x: time series data
+# x: count time series data
 # type: PIG or NB distributions
 # order: model order
 # method: optimization method
