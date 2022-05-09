@@ -4,7 +4,7 @@
 
 # Instructions:
 
-# Set the theoretical values for the parameters
+# Set the theoretical parameter values
 
 # Set the sample size
 
