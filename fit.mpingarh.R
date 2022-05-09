@@ -2,6 +2,15 @@
 # R code for fitting MPINGARCH processes
 #---------------------------------------
 
+# Arguments of the fit.mpingarh function:
+
+# x: time series data
+# type: PIG or NB distributions
+# order: model order
+# method: optimization method
+# tol: tolerance level in the EM algorithm
+
+
 fit.mpingarch <- function(x, type, order, method, tol){
  
   pacman::p_load(tseries, gamlss.dist) # R libraries
@@ -1184,14 +1193,14 @@ fit.mpingarch <- function(x, type, order, method, tol){
   order <- as.character(order)
   switch(type, 
          "PIG" = switch(order,
-                        "1" = mpinarch1.PIG(x, method, tol = tol),
-                        "2" = mpinarch2.PIG(x, method, tol = tol),
-                        "11" = mpingarch11.PIG(x, method, tol = tol),
+                        "1" = pigingarch1(x, method, tol = tol),
+                        "2" = pigingarch2(x, method, tol = tol),
+                        "11" = pigingarch11(x, method, tol = tol),
                         stop("Order not expected!")),
          "NB" = switch(order,
-                       "1" = mpinarch1.NB(x, method, tol = tol),
-                       "2" = mpinarch2.NB(x, method, tol = tol),
-                       "11" = mpingarch11.NB(x, method, tol = tol),
+                       "1" = nbingarch1(x, method, tol = tol),
+                       "2" = nbingarch2(x, method, tol = tol),
+                       "11" = nbingarch11(x, method, tol = tol),
                        stop("Order not expected!")),
          stop("Type not expected!")
   )
