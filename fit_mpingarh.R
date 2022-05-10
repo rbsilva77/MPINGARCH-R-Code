@@ -1,6 +1,6 @@
-#---------------------------------------
-# R code for fitting MPINGARCH processes
-#---------------------------------------
+#-----------------------------------------
+# R implementation of the PIGINGARCH model
+#-----------------------------------------
 
 # Arguments of the fit.mpingarh function:
 
@@ -1191,19 +1191,11 @@ fit.mpingarch <- function(x, type, order, method, tol){
   }# end of the pigingarch11 function
   
   order <- as.character(order)
-  switch(type, 
-         "PIG" = switch(order,
+  switch(order,
                         "1" = pigingarch1(x, method, tol = tol),
                         "2" = pigingarch2(x, method, tol = tol),
                         "11" = pigingarch11(x, method, tol = tol),
-                        stop("Order not expected!")),
-         "NB" = switch(order,
-                       "1" = nbingarch1(x, method, tol = tol),
-                       "2" = nbingarch2(x, method, tol = tol),
-                       "11" = nbingarch11(x, method, tol = tol),
-                       stop("Order not expected!")),
-         stop("Type not expected!")
-  )
+                        stop("Order not expected!"))
   
 }# end of the fit.mpingarch function
 
